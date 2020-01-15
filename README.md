@@ -16,10 +16,8 @@
 # 示例程序
 
 #### 准备工作
-1. 在三体云官网SDK下载页 [http://3ttech.cn/index.php?menu=53](http://3ttech.cn/index.php?menu=53) 下载对应平台的 连麦直播SDK。
-2. 登录三体云官网 [http://dashboard.3ttech.cn/index/login](http://dashboard.3ttech.cn/index/login) 注册体验账号，进入控制台新建自己的应用并获取APPID。
-3. 下载DEMO源码，将APPID填入代码中相应的位置。
-4. 将官网下载的aar包拷贝到libs目录下 修改build.gradle 文件
+1. 登录三体云官网 [http://dashboard.3ttech.cn/index/login](http://dashboard.3ttech.cn/index/login) 注册体验账号，进入控制台新建自己的应用并获取APPID。
+2. 下载DEMO源码，将APPID填入代码中相应的位置。
 
 # 实现步骤
 
@@ -66,18 +64,17 @@
 
 ### Android 工程配置
 
-1. 解压下载的 SDK 压缩包，内容如图所示
+1. 拷贝 SDK 压缩包，到工程的lib目录下
 ![](Android_1.png)
-2. 用Android Studio，打开 **Android-KTV Demo** 工程，文件列表如图所示，复制 **3T\_Native\_SDK\_for\_Android\_Vx.x.x\_Full.aar** 到工程 **app** 项目下的 **libs** 目录下。
-![](Android_2.jpg) 
-![](Android_3.jpg) 
+2. 用Android Studio，打开 **Android-AutoRTMPLive** 工程，文件列表如图所示，复制 **3T_Native_SDK_for_Androidi_V2.4.21(2020_01_14)** 到工程 **app** 项目下的 **libs** 目录下。
+![](Android_2.png)
 3. 引用 aar 包。在 app 项目下的 build.gradle 文件中添加红框中相应代码来引用。
-![](Android_5.jpg) 
-![](Android_6.jpg) 
-![](Android_7.jpg) 
+![](Android_3.png)
+![](Android_4.png)
+![](Android_5.png)
 
 4. 将申请到的 **APPID** 填入 SDK 的初始化函数 **create** 中，如下图所示。
-![](Android_8.jpg)
+![](Android_6.png)
 5. 最后编码代码即可运行Demo。
 
 	运行环境:
