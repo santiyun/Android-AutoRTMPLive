@@ -23,34 +23,34 @@
 
 ### 主播
 
-1.	创建 TTT 音视频引擎对象 create
-2.	设置视频参数 setVideoProfile
-3.	设置音频编码setPreferAudioCodec
-4.	启动本地视频预览 startPreview
-5.	设置本地视频显示属性 setupLocalVideo
+1.	创建 TTT 音视频引擎对象 [create](http://www.3ttech.cn/index.php?menu=72&type=Android#create)
+2.	设置视频参数 [setVideoProfile](http://www.3ttech.cn/index.php?menu=72&type=Android#setVideoProfile)
+3.	设置音频编码 [setPreferAudioCodec](http://www.3ttech.cn/index.php?menu=72&type=Android#setPreferAudioCodec)
+4.	启动本地视频预览 [startPreview](http://www.3ttech.cn/index.php?menu=72&type=Android#startPreview)
+5.	设置本地视频显示属性 [setupLocalVideo](http://www.3ttech.cn/index.php?menu=72&type=Android#setupLocalVideo)
 6.	开始rtmp推流 anchorStartRtmpPublish
 7.	上麦
-8.	设置音频编码setPreferAudioCodec
-9.	设置角色setClientRole
-10.	设置视频质量setVideoProfile
-11.	加入房间anchorJoinChannel
+8.	设置音频编码 [setPreferAudioCodec](http://www.3ttech.cn/index.php?menu=72&type=Android#setPreferAudioCodec)
+9.	设置角色 [setClientRole](http://www.3ttech.cn/index.php?menu=72&type=Android#setClientRole)
+10.	设置视频质量 [setVideoProfile](http://www.3ttech.cn/index.php?menu=72&type=Android#setVideoProfile)
+11.	加入房间 anchorJoinChannel
 12.	下麦
-13.	设置音频编码setPreferAudioCodec
-14.	推流设置为直推anchorStartRtmpPublish
-15.	退出直播 判断当前如果是上麦状态 leaveChannel，如果是下麦状态stopRtmpPublish
-16.	在ondestroy中销毁destroy
+13.	设置音频编码 [setPreferAudioCodec](http://www.3ttech.cn/index.php?menu=72&type=Android#setPreferAudioCodec)
+14.	推流设置为直推 anchorStartRtmpPublish
+15.	退出直播 判断当前如果是上麦状态 [leaveChannel](http://www.3ttech.cn/index.php?menu=72&type=Android#leaveChannel)，如果是下麦状态 [stopRtmpPublish](http://www.3ttech.cn/index.php?menu=72&type=Android#stopRtmpPublish)
+16.	在ondestroy中销毁 [destroy](http://www.3ttech.cn/index.php?menu=72&type=Android#destroy)
 
 ### 观众
-1.	创建 TTT 音视频引擎对象 create
-2.	拉流pullRtmp
+1.	创建 TTT 音视频引擎对象 [create](http://www.3ttech.cn/index.php?menu=72&type=Android#create)
+2.	拉流 pullRtmp
 3.	上麦
-4.	设置音频编码setPreferAudioCodec
-5.	设置角色setClientRole
-6.	设置视频质量setVideoProfile
-7.	上麦互动audienceJoinChannel
+4.	设置音频编码 [setPreferAudioCodec](http://www.3ttech.cn/index.php?menu=72&type=Android#setPreferAudioCodec)
+5.	设置角色 [setClientRole](http://www.3ttech.cn/index.php?menu=72&type=Android#setClientRole)
+6.	设置视频质量 [setVideoProfile](http://www.3ttech.cn/index.php?menu=72&type=Android#setVideoProfile)
+7.	上麦互动 audienceJoinChannel
 8.	下麦
-9.	拉流pullRtmp
-10.	在ondestroy中销毁destroy
+9.	拉流 pullRtmp
+10.	在ondestroy中销毁 [destroy](http://www.3ttech.cn/index.php?menu=72&type=Android#destroy)
 
 #### 可选操作
 1. 翻转摄像头 [switchCamera](http://www.3ttech.cn/index.php?menu=72&type=Android#switchCamera) 

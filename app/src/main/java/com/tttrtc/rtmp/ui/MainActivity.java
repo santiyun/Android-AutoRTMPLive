@@ -395,7 +395,7 @@ public class MainActivity extends BaseActivity {
                         }
                         if (!mIsJoinRoom) {
                             if (mJniObjs.mErrorType == Constants.RTMP_PUSH_STATE_INITERROR) {
-                                toastmsg = "推流初始化失败";
+                                toastmsg = "初始化RTMP失败";
                                 showErrorExitDialog(toastmsg);
                                 stopRtmpPublish();
                             } else if (mJniObjs.mErrorType == Constants.RTMP_PUSH_STATE_OPENERROR) {
@@ -403,7 +403,7 @@ public class MainActivity extends BaseActivity {
                                 showErrorExitDialog(toastmsg);
                                 stopRtmpPublish();
                             } else if (mJniObjs.mErrorType == Constants.RTMP_PUSH_STATE_LINKFAILED) {
-                                toastmsg = "推流发送失败";
+                                toastmsg = "推流失败";
                                 showErrorExitDialog(toastmsg);
                                 stopRtmpPublish();
                             }
@@ -515,9 +515,7 @@ public class MainActivity extends BaseActivity {
                             message = getResources().getString(R.string.ttt_error_exit_server_overload);
                         } else if (errorType == Constants.ERROR_KICK_BY_MASTER_EXIT) {
                             //监听到主播下麦 需要去打开ijkplayer
-                            PviewLog.d("#####activity onerror " );
                             int i = mTTTEngine.pullRtmp(mLocalShowLayoutOne, LocalConfig.mPullPreifx + mRoomID, true, MainActivity.this, IRenderView.AR_MATCH_PARENT);
-                            PviewLog.d("#####activity pullRtmp result =  " +i);
                             if (LocalSDKConstants.FUNCTION_SUCCESS != i) {
                                 if (i == 202) {
                                     Toast.makeText(MainActivity.this, "正在拉rtmp流,请勿重复操作", Toast.LENGTH_SHORT).show();
@@ -552,10 +550,8 @@ public class MainActivity extends BaseActivity {
                             String localAnchorName = getString(R.string.ttt_role_anchor) + "ID: " + mAnchorId;
                             ((TextView) findViewById(R.id.main_btn_host)).setText(localAnchorName);
                         }
-                        PviewLog.d("#####mainactivity onUserJoin mRole = "+mRole);
                         if (mRole == CLIENT_ROLE_ANCHOR) {
                             EnterUserInfo userInfo = new EnterUserInfo(uid, identity);
-                            PviewLog.d("#####mainactivity setSei userInfo = "+userInfo.toString());
                             mWindowManager.addAndSendSei(mUserId, userInfo);
                         }
 
@@ -620,8 +616,6 @@ public class MainActivity extends BaseActivity {
                         break;
 
                     case LocalConstans.CALL_BACK_ON_ROOM_IJK_ERROR:
-                        PviewLog.d("#####mainactivity onPlayRTMPError error = "+mJniObjs.mIsEnableVideo);
-                        PviewLog.d("#####mainactivity dialog = "+mDialog==null?"":mDialog.isShowing()+"");
                         //纯拉流播放错误回调
                         if (mDialog != null && mDialog.isShowing())
                             mDialog.dismiss();
