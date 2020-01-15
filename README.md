@@ -9,7 +9,8 @@
 # 方案设计
 <img src='InteractLive.png'/>
 观众通过CDN观看直播时，可以申请上麦，加入直播间与主播实时互动连线。
-
+# 演示Demo
+<img src='qrcode.png'/>
 # 示例程序
 
 #### 准备工作
