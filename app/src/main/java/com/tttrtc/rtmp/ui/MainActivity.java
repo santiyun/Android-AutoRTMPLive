@@ -184,11 +184,6 @@ public class MainActivity extends BaseActivity {
                     mTTTEngine.setVideoProfile(360, 640, 15, 800);
                     //4.设置流媒体地址
                     String roomID = (String) SharedPreferencesUtil.getParam(MainActivity.this, "RoomID", "");
-                    String port = (String) SharedPreferencesUtil.getParam(MainActivity.this, "port", "");
-                    int ip = (Integer) SharedPreferencesUtil.getParam(MainActivity.this, "ip", 0);
-                    if (!TextUtils.isEmpty(port)&&ip>0){
-                        mTTTEngine.setServerIp(port,ip);
-                    }
 
                     // 5.调用进房间接口
                     int i = -1;

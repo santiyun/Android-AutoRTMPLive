@@ -38,15 +38,11 @@ public class SplashActivity extends BaseActivity {
     private RadioButton mHostBT, mAuthorBT;
     private int mRole = CLIENT_ROLE_ANCHOR;
     private ProgressDialog mDialog;
-    private EditText et_port;
-    private EditText et_ip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_activity);
-        et_port = findViewById(R.id.et_port);
-        et_ip = findViewById(R.id.et_ip);
         AndPermission.with(this)
                 .permission(Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE)
                 .start();
@@ -115,14 +111,6 @@ public class SplashActivity extends BaseActivity {
     private void initData() {
         // 读取保存的数据
         String roomID = (String) SharedPreferencesUtil.getParam(this, "RoomID", "");
-        String port = (String) SharedPreferencesUtil.getParam(this, "port", "");
-        int ip = (Integer) SharedPreferencesUtil.getParam(this, "ip", 0);
-        if (!TextUtils.isEmpty(port)){
-            et_port.setText(port);
-        }
-        if (ip>0){
-            et_ip.setText(ip+"");
-        }
         mRoomIDET.setText(roomID);
         mRoomIDET.setSelection(mRoomIDET.length());
 
@@ -164,19 +152,6 @@ public class SplashActivity extends BaseActivity {
             Toast.makeText(this, R.string.hint_channel_name_limit, Toast.LENGTH_SHORT).show();
             return;
         }
-        String port = et_port.getText().toString();
-        String ip = et_ip.getText().toString();
-        if (!TextUtils.isEmpty(port)&&!TextUtils.isEmpty(ip)){
-            try{
-                int i = Integer.parseInt(ip);
-                SharedPreferencesUtil.setParam(this, "port", port);
-                SharedPreferencesUtil.setParam(this, "ip", i);
-            }catch (Exception e){
-                Toast.makeText(this, "请输入正确的服务器地址和端口", Toast.LENGTH_SHORT).show();
-                return;
-            }
-        }
-
         try {
             long roomId = Long.valueOf(mRoomName);
             if (roomId <= 0) {
